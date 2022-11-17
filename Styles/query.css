@@ -1,0 +1,11 @@
+@media (min-width: 280px) and (max-width: 1024px) {
+  .turistic-tittle {
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: 280px) and (max-width: 490px) {
+  .turistic-tittle {
+    width: 332px;
+  }
+}

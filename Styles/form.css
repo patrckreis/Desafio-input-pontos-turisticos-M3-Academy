@@ -11,6 +11,7 @@
 }
 
 .turistic-form-tittle-placeholder {
+  display: block;
   width: 328px;
   height: 56px;
   border: 2px solid #d6d6d6;
@@ -19,6 +20,7 @@
 }
 
 .turistic-form-description-placeholder {
+  display: block;
   overflow-y: hidden;
   resize: none;
   width: 417px;
@@ -28,19 +30,10 @@
   padding: 40px 20px 72px;
 }
 
-/* .turistic-form-image-input {
-  width: 343px;
-  height: 212px;
-  border: 2px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 94px 141px;
-} */
-
-.input-desgraca {
+.input-image {
   z-index: 2;
   position: absolute;
 }
-
 .turistic-form-image-output {
   max-height: 100%;
   max-width: 100%;
@@ -51,6 +44,8 @@
 }
 
 .turistic-tittle {
+  width: 477px;
+  display: block;
   color: #000000;
   margin: 40px 130px;
   font-family: "poppins";
@@ -58,8 +53,6 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 120%;
-  display: flex;
-  align-items: center;
 }
 
 .turistic-form-inputs {
@@ -75,4 +68,18 @@
 
 .turistic-form-description {
   margin-block-start: auto;
+}
+
+.turistic-form-submit-button {
+  display: block;
+  border: 1px solid #ff5a5f;
+  border-radius: 8px;
+  color: white;
+  background-color: #ff5a5f;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 16px;
+  margin: 16px 788px;
+  padding: 16px 20px;
+  gap: 10px;
 }
