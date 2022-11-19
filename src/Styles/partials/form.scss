@@ -42,17 +42,15 @@
   width: 343px;
   height: 212px;
 }
-
-.turistic-tittle {
-  width: 477px;
-  display: block;
-  color: #000000;
-  margin: 40px 130px;
-  font-family: "poppins";
+.point-turistic-tittle {
+  width: 283px;
+  height: 38px;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 120%;
+  margin: 60px 130px;
 }
 
 .turistic-form-inputs {
@@ -68,18 +66,4 @@
 
 .turistic-form-description {
   margin-block-start: auto;
-}
-
-.turistic-form-submit-button {
-  display: block;
-  border: 1px solid #ff5a5f;
-  border-radius: 8px;
-  color: white;
-  background-color: #ff5a5f;
-  font-family: "Poppins";
-  font-weight: 700;
-  font-size: 16px;
-  margin: 16px 788px;
-  padding: 16px 20px;
-  gap: 10px;
 }

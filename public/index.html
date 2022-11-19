@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Atrações Turísticas</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../dist/main.css" />
+    </head>
+    <body>
+        <main>
+            <section class="turistic-container">
+                <h1 class="turistic-tittle">Adicionar um Ponto Turístico</h1>
+                <form class="turistic-form">
+                    <div class="turistic-form-inputs">
+                        <div class="turistic-form-image">
+                            <input
+                                placeholder="Imgem"
+                                class="input-image"
+                                type="file"
+                                accept="image/*"
+                                onchange="loadFile(event)"
+                            />
+                            <img
+                                class="turistic-form-image-output"
+                                id="output"
+                            />
+                        </div>
+                        <div class="turistic-form-tittle">
+                            <input
+                                name="item-tittle"
+                                class="turistic-form-tittle-placeholder"
+                                type="text"
+                                placeholder="Título"
+                            />
+                        </div>
+                        <div class="turistic-form-description">
+                            <textarea
+                                name="item-description"
+                                placeholder="Descrição"
+                                class="turistic-form-description-placeholder"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <button class="turistic-form-submit-button" type="submit">
+                        Adicionar
+                    </button>
+                </form>
+            </section>
+            <section>
+                <h2 class="point-turistic-tittle">Pontos Turísticos</h2>
+                <div class="tittle-result">
+                    <div class="tittle-result-head">
+                        <ul class="tittle-result-render"></ul>
+                    </div>
+                    <ul class="shopping-tittle-render"></ul>
+                </div>
+            </section>
+        </main>
+        <script src="../dist/bundle.js"></script>
+    </body>
+</html>
