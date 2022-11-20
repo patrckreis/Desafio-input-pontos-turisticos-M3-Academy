@@ -15,31 +15,31 @@
             href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="../dist/main.css" />
+        <link rel="stylesheet" href="main.css" />
     </head>
     <body>
         <main>
             <section class="turistic-container">
-                <h1 class="turistic-tittle">Adicionar um Ponto Turístico</h1>
+                <h1 class="turistic-title">Adicionar um Ponto Turístico</h1>
                 <form class="turistic-form">
                     <div class="turistic-form-inputs">
                         <div class="turistic-form-image">
                             <input
-                                placeholder="Imgem"
                                 class="input-image"
+                                placeholder="Imgem"
+                                id="input-image"
                                 type="file"
                                 accept="image/*"
-                                onchange="loadFile(event)"
                             />
                             <img
                                 class="turistic-form-image-output"
                                 id="output"
                             />
                         </div>
-                        <div class="turistic-form-tittle">
+                        <div class="turistic-form-title">
                             <input
-                                name="item-tittle"
-                                class="turistic-form-tittle-placeholder"
+                                name="item-title"
+                                class="turistic-form-title-placeholder"
                                 type="text"
                                 placeholder="Título"
                             />
@@ -58,15 +58,15 @@
                 </form>
             </section>
             <section>
-                <h2 class="point-turistic-tittle">Pontos Turísticos</h2>
-                <div class="tittle-result">
-                    <div class="tittle-result-head">
-                        <ul class="tittle-result-render"></ul>
+                <h2 class="point-turistic-title">Pontos Turísticos</h2>
+                <div class="title-result">
+                    <div class="title-result-head">
+                        <ul class="title-result-render"></ul>
                     </div>
-                    <ul class="shopping-tittle-render"></ul>
+                    <ul class="shopping-title-render"></ul>
                 </div>
             </section>
         </main>
-        <script src="../dist/bundle.js"></script>
+        <script src="bundle.js"></script>
     </body>
 </html>

@@ -1,31 +1,75 @@
 export class TuristicForm {
     constructor() {
-        this.list = [];
+        this.list = [
+            {
+                name: "Pão de Açúcar",
+                path: "assets/pao-de-acucar.png",
+                description:
+                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
+            },
+            {
+                name: "Cristo Redentor",
+                path: "assets/cristo-redentor.png",
+                description:
+                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
+            },
+            {
+                name: "Pão de Açúcar",
+                path: "assets/ilha-grande.png",
+                description:
+                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
+            },
+            {
+                name: "Centro Histórico de Paraty",
+                path: "assets/centro-paraty.png",
+                description:
+                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
+            },
+        ];
+        this.uploadedImage = "";
         this.selectors();
         this.events();
+        this.renderListItems();
     }
+
     selectors() {
-        this.items = document.querySelector(".tittle-result-render");
+        this.output = document.querySelector("#output");
+        this.imgInp = document.querySelector("#input-image");
+        this.items = document.querySelector(".title-result-render");
         this.form = document.querySelector(".turistic-form");
         this.descriptionInput = document.querySelector(
             ".turistic-form-description-placeholder"
         );
-        this.tittleInput = document.querySelector(
-            ".turistic-form-tittle-placeholder"
+        this.titleInput = document.querySelector(
+            ".turistic-form-title-placeholder"
         );
     }
 
     events() {
+        this.imgInp.addEventListener("change", this.loadFile.bind(this));
         this.form.addEventListener("submit", this.addItemToList.bind(this));
+    }
+
+    loadFile(event) {
+        this.uploadedImage = URL.createObjectURL(event.target.files[0]);
+        console.log(this.uploadedImage);
+        output.src = this.uploadedImage;
     }
 
     addItemToList(event) {
         event.preventDefault();
 
-        const itemTittle = event.target["item-tittle"].value;
-        if (itemTittle != "") {
+        const itemDescription = event.target["item-description"].value;
+        const itemtitle = event.target["item-title"].value;
+        if (
+            itemtitle != "" &&
+            itemDescription != "" &&
+            this.uploadedImage != ""
+        ) {
             const item = {
-                name: itemTittle,
+                path: this.uploadedImage,
+                name: itemtitle,
+                description: itemDescription,
             };
             this.list.push(item);
 
@@ -35,20 +79,28 @@ export class TuristicForm {
     }
 
     renderListItems() {
-        let tittleStructure = "";
+        console.log(this.list);
+        let titleStructure = "";
         this.list.forEach(function (item) {
-            tittleStructure += `
-        <li class="tittle-item">
-          <span>${item.name}</span>
+            titleStructure += `
+        <li class="card-li">
+            <img src=${item.path} />
+            <div class="info-container-div"><span  class="item-title-render">${item.name}</span>
+            <p class="item-description-render">${item.description} </p></div>
+
         </li>
       `;
         });
 
-        this.items.innerHTML = tittleStructure;
+        this.items.innerHTML = titleStructure;
     }
 
     resetInputs() {
-        this.tittleInput.value = "";
+        this.output.src = "";
+        this.imgInp.value = "";
+        this.titleInput.value = "";
+        this.descriptionInput.value = "";
+        this.uploadedImage = "";
     }
 }
 
@@ -74,13 +126,13 @@ imgInp.onchange = (evt) => {
 
 /* document.addEventListener("DOMContentLoaded", function () {
     const list = [];
-    const items = document.querySelector(".tittle-result-render");
+    const items = document.querySelector(".title-result-render");
     const form = document.querySelector(".turistic-form");
     const descriptionInput = document.querySelector(
         ".turistic-form-description-placeholder"
     );
-    const tittleInput = document.querySelector(
-        ".turistic-form-tittle-placeholder"
+    const titleInput = document.querySelector(
+        ".turistic-form-title-placeholder"
     );
 
     form.addEventListener("submit", addItemToList);
@@ -88,10 +140,10 @@ imgInp.onchange = (evt) => {
     function addItemToList(event) {
         event.preventDefault();
 
-        const itemTittle = event.target["item-tittle"].value;
-        if (itemTittle != "") {
+        const itemtitle = event.target["item-title"].value;
+        if (itemtitle != "") {
             const item = {
-                name: itemTittle,
+                name: itemtitle,
             };
             list.push(item);
 
@@ -101,20 +153,20 @@ imgInp.onchange = (evt) => {
     }
 
     function renderListItems() {
-        let tittleStructure = "";
+        let titleStructure = "";
         list.forEach(function (item) {
-            tittleStructure += `
-        <li class="tittle-item">
+            titleStructure += `
+        <li class="title-item">
           <span>${item.name}</span>
         </li>
       `;
         });
 
-        items.innerHTML = tittleStructure;
+        items.innerHTML = titleStructure;
     }
 
     function resetInputs() {
-        tittleInput.value = "";
+        titleInput.value = "";
     }
 });
 

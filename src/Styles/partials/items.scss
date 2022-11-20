@@ -1,8 +1,39 @@
-.tittle-result-head {
-  margin-left: 128px;
-  background: #ffffff;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  width: 229px;
-  height: 424px;
+.title-result-render {
+    list-style: none;
+    display: flex;
+    gap: 21px;
+    margin: auto;
+}
+
+.item-description-render {
+    width: 231px;
+    height: 96px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.item-title-render {
+    width: 231px;
+    height: 60px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+.card-li {
+    background: #ffffff;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    width: 279px;
+    height: 424px;
+}
+
+.info-container-div {
+    width: 100%;
+    padding: 24px;
 }
