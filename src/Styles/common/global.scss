@@ -6,4 +6,8 @@
 
 main {
     padding: 40px 130px;
+
+    @media (min-width: 280px) and (max-width: 1024px) {
+        padding: 40px 16px;
+    }
 }
