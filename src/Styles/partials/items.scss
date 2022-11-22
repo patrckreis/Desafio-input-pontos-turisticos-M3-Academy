@@ -2,7 +2,7 @@
     max-width: 100%;
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 21px;
     margin: auto;
 }
@@ -53,6 +53,11 @@
     border-radius: 8px;
     height: 50%;
     width: 100%;
+}
+
+.image-container-render {
+    width: 100%;
+    height: 100%;
 }
 
 /* Slider */ ///////////////////////////////////////////////////////////////////////////

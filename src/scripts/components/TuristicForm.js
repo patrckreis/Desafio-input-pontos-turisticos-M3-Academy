@@ -84,7 +84,9 @@ export class TuristicForm {
         this.list.forEach(function (item) {
             titleStructure += `
         <li class="card-li">
-            <img src=${item.path} />
+            <div class="image-container">
+            <img class="image-container-render" src=${item.path} />
+            </div>
             <div class="info-container-div"><span  class="item-title-render">${item.name}</span>
             <p class="item-description-render">${item.description} </p></div>
 
