@@ -54,6 +54,7 @@ export class TuristicForm {
         this.uploadedImage = URL.createObjectURL(event.target.files[0]);
         console.log(this.uploadedImage);
         output.src = this.uploadedImage;
+        this.output.classList.remove("display-none");
     }
 
     addItemToList(event) {
@@ -87,8 +88,16 @@ export class TuristicForm {
             <div class="image-container">
             <img class="image-container-render" src=${item.path} />
             </div>
-            <div class="info-container-div"><span  class="item-title-render">${item.name}</span>
-            <p class="item-description-render">${item.description} </p></div>
+            <div class="info-container-div">
+                <div class="tittle-container">
+                    <span   class="item-title-render">${item.name}</span>
+                </div>
+
+                <div class="description-container">
+                    <p   class="item-description-render">${item.description} </p>
+                </div>
+            </div>
+
 
         </li>
       `;
@@ -98,6 +107,7 @@ export class TuristicForm {
     }
 
     resetInputs() {
+        this.output.classList.add("display-none");
         this.output.src = "";
         this.imgInp.value = "";
         this.titleInput.value = "";

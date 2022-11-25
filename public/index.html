@@ -16,6 +16,18 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="main.css" />
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+        />
     </head>
     <body>
         <main>
@@ -23,7 +35,7 @@
                 <h1 class="turistic-title">Adicionar um Ponto Turístico</h1>
                 <form class="turistic-form">
                     <div class="turistic-form-inputs">
-                        <div class="turistic-form-image">
+                        <label class="turistic-form-image" for="input-image">
                             <input
                                 class="input-image"
                                 placeholder="Imgem"
@@ -31,26 +43,26 @@
                                 type="file"
                                 accept="image/*"
                             />
+                            <span class="span-input-image">Imagem</span>
+
                             <img
                                 class="turistic-form-image-output"
                                 id="output"
                             />
-                        </div>
-                        <div class="turistic-form-title">
-                            <input
-                                name="item-title"
-                                class="turistic-form-title-placeholder"
-                                type="text"
-                                placeholder="Título"
-                            />
-                        </div>
-                        <div class="turistic-form-description">
-                            <textarea
-                                name="item-description"
-                                placeholder="Descrição"
-                                class="turistic-form-description-placeholder"
-                            ></textarea>
-                        </div>
+                        </label>
+
+                        <input
+                            name="item-title"
+                            class="turistic-form-title-placeholder"
+                            type="text"
+                            placeholder="Título"
+                        />
+
+                        <textarea
+                            name="item-description"
+                            placeholder="Descrição"
+                            class="turistic-form-description-placeholder"
+                        ></textarea>
                     </div>
                     <button class="turistic-form-submit-button" type="submit">
                         Adicionar
@@ -67,6 +79,7 @@
                 </div>
             </section>
         </main>
+
         <script src="bundle.js"></script>
     </body>
 </html>

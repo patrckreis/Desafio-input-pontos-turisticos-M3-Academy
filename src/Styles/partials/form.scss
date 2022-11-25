@@ -32,6 +32,7 @@
 }
 
 .turistic-form-description-placeholder {
+    margin-top: 20px;
     display: block;
     overflow-y: hidden;
     resize: none;
@@ -54,28 +55,6 @@
     }
 }
 
-.input-image {
-    z-index: 2;
-    position: absolute;
-}
-.turistic-form-image-output {
-    max-height: 100%;
-    max-width: 100%;
-    border: 2px solid #e5e5e5;
-    border-radius: 8px;
-    width: 343px;
-    height: 212px;
-
-    @media (min-width: 491px) and (max-width: 1024px) {
-        width: 100%;
-        height: 570px;
-    }
-
-    @media (min-width: 280px) and (max-width: 490px) {
-        width: 100%;
-        height: 212px;
-    }
-}
 .point-turistic-title {
     width: 283px;
     height: 38px;
@@ -172,4 +151,65 @@
         margin-top: 10px;
         width: 100%;
     }
+}
+
+.turistic-form-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 212px;
+    width: 343px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    @media (min-width: 491px) and (max-width: 1024px) {
+        width: 100%;
+        height: 570px;
+    }
+
+    @media (min-width: 280px) and (max-width: 490px) {
+        width: 100%;
+        height: 212px;
+    }
+}
+
+.input-image {
+    z-index: 1;
+    display: none;
+    /* z-index: 2;
+    position: absolute; */
+}
+
+.turistic-form-image-output {
+    border-radius: 1px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    /* max-height: 100%;
+    max-width: 100%;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    width: 343px;
+    height: 212px; */
+}
+
+.span-input-image {
+    color: #858585;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-none {
+    display: none;
 }
