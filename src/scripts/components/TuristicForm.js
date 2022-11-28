@@ -25,17 +25,33 @@ export class TuristicForm {
                 description:
                     "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
             },
+            {
+                name: "Centro Histórico de Paraty",
+                path: "assets/centro-paraty.png",
+                description:
+                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
+            },
+            {
+                name: "Centro Histórico de Paraty",
+                path: "assets/centro-paraty.png",
+                description:
+                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
+            },
         ];
         this.uploadedImage = "";
         this.selectors();
         this.events();
+        if (window.screen.width > 1024) {
+            this.slickAdd();
+        }
+
         this.renderListItems();
     }
 
     selectors() {
         this.output = document.querySelector("#output");
         this.imgInp = document.querySelector("#input-image");
-        this.items = document.querySelector(".title-result-render");
+        this.items = document.querySelector(".cards-result-render");
         this.form = document.querySelector(".turistic-form");
         this.descriptionInput = document.querySelector(
             ".turistic-form-description-placeholder"
@@ -75,6 +91,7 @@ export class TuristicForm {
             this.list.push(item);
 
             this.renderListItems();
+
             this.resetInputs();
         }
     }
@@ -84,16 +101,16 @@ export class TuristicForm {
         let titleStructure = "";
         this.list.forEach(function (item) {
             titleStructure += `
-        <li class="card-li">
-            <div class="image-container">
-            <img class="image-container-render" src=${item.path} />
+        <li data-test="container-item-list" class="card-li">
+            <div data-test="item-list" class="image-container">
+            <img data-test="image-item-list" class="image-container-render" src=${item.path} />
             </div>
             <div class="info-container-div">
-                <div class="tittle-container">
+                <div data-test="title-item-list" class="tittle-container">
                     <span   class="item-title-render">${item.name}</span>
                 </div>
 
-                <div class="description-container">
+                <div data-test="description-item-list" class="description-container">
                     <p   class="item-description-render">${item.description} </p>
                 </div>
             </div>
@@ -102,8 +119,14 @@ export class TuristicForm {
         </li>
       `;
         });
-
+        if (window.screen.width > 1024) {
+            this.removeslick();
+        }
         this.items.innerHTML = titleStructure;
+
+        if (window.screen.width > 1024) {
+            this.slickAdd();
+        }
     }
 
     resetInputs() {
@@ -114,85 +137,19 @@ export class TuristicForm {
         this.descriptionInput.value = "";
         this.uploadedImage = "";
     }
-}
 
-//INPUT DE IMAGEM
-
-/* const loadFile = function (event) {
-    const output = document.getElementById("output");
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function () {
-        URL.revokeObjectURL(output.src); // free memory
-    };
-};
-
-imgInp.onchange = (evt) => {
-    const [file] = imgInp.files;
-    if (file) {
-        blah.src = URL.createObjectURL(file);
-    }
-}; */
-
-///////////////////////////////////////////////  CODIGO SEM CONSTRUCTO
-///////////////////////////////////////////////  CODIGO SEM CONSTRUCTO
-
-/* document.addEventListener("DOMContentLoaded", function () {
-    const list = [];
-    const items = document.querySelector(".title-result-render");
-    const form = document.querySelector(".turistic-form");
-    const descriptionInput = document.querySelector(
-        ".turistic-form-description-placeholder"
-    );
-    const titleInput = document.querySelector(
-        ".turistic-form-title-placeholder"
-    );
-
-    form.addEventListener("submit", addItemToList);
-
-    function addItemToList(event) {
-        event.preventDefault();
-
-        const itemtitle = event.target["item-title"].value;
-        if (itemtitle != "") {
-            const item = {
-                name: itemtitle,
-            };
-            list.push(item);
-
-            renderListItems();
-            resetInputs();
-        }
-    }
-
-    function renderListItems() {
-        let titleStructure = "";
-        list.forEach(function (item) {
-            titleStructure += `
-        <li class="title-item">
-          <span>${item.name}</span>
-        </li>
-      `;
+    slickAdd() {
+        $(".cards-result-render").slick({
+            variablewidth: true,
+            dots: true,
+            arrows: true,
+            infinite: false,
+            slidesToShow: 4,
+            slidesToScroll: 1,
         });
-
-        items.innerHTML = titleStructure;
     }
 
-    function resetInputs() {
-        titleInput.value = "";
+    removeslick() {
+        $(".cards-result-render").slick("unslick");
     }
-});
-
-const loadFile = function (event) {
-    const output = document.getElementById("output");
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function () {
-        URL.revokeObjectURL(output.src); // free memory
-    };
-};
-
-imgInp.onchange = (evt) => {
-    const [file] = imgInp.files;
-    if (file) {
-        blah.src = URL.createObjectURL(file);
-    }
-}; */
+}

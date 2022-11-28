@@ -15,28 +15,30 @@
             href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="main.css" />
-        <!-- Add the slick-theme.css if you want default styling -->
+
         <link
             rel="stylesheet"
             type="text/css"
             href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
         />
-        <!-- Add the slick-theme.css if you want default styling -->
         <link
             rel="stylesheet"
             type="text/css"
             href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
         />
+        <link rel="stylesheet" href="main.css" />
     </head>
     <body>
         <main>
             <section class="turistic-container">
-                <h1 class="turistic-title">Adicionar um Ponto Turístico</h1>
+                <h1 data-test="title-form" class="turistic-title">
+                    Adicionar um Ponto Turístico
+                </h1>
                 <form class="turistic-form">
                     <div class="turistic-form-inputs">
                         <label class="turistic-form-image" for="input-image">
                             <input
+                                data-test="input-image"
                                 class="input-image"
                                 placeholder="Imgem"
                                 id="input-image"
@@ -52,6 +54,7 @@
                         </label>
 
                         <input
+                            data-test="input-titulo"
                             name="item-title"
                             class="turistic-form-title-placeholder"
                             type="text"
@@ -59,27 +62,37 @@
                         />
 
                         <textarea
+                            data-test="input-descrição"
                             name="item-description"
                             placeholder="Descrição"
                             class="turistic-form-description-placeholder"
                         ></textarea>
                     </div>
-                    <button class="turistic-form-submit-button" type="submit">
+                    <button
+                        data-test="button-submit"
+                        class="turistic-form-submit-button"
+                        type="submit"
+                    >
                         Adicionar
                     </button>
                 </form>
             </section>
             <section>
-                <h2 class="point-turistic-title">Pontos Turísticos</h2>
+                <h2 data-test="title-list" class="point-turistic-title">
+                    Pontos Turísticos
+                </h2>
                 <div class="title-result">
-                    <div class="title-result-head">
-                        <ul class="title-result-render"></ul>
-                    </div>
+                    <ul class="cards-result-render"></ul>
+
                     <ul class="shopping-title-render"></ul>
                 </div>
             </section>
         </main>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script
+            type="text/javascript"
+            src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        ></script>
         <script src="bundle.js"></script>
     </body>
 </html>
