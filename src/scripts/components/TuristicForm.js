@@ -87,19 +87,19 @@ export class TuristicForm {
 
     renderListItems() {
         console.log(this.list);
-        let titleStructure = "";
+        let cards = "";
         this.list.forEach(function (item) {
-            titleStructure += `
-        <li data-test="container-item-list" class="card-li">
-            <div data-test="item-list" class="image-container" style="background: no-repeat center url(${item.path});background-size:cover">
+            cards += `
+        <li data-test="item-list"  class="card-li">
+            <div data-test="image-item-list" class="image-container" style="background: no-repeat center url(${item.path});background-size:cover">
             </div>
             <div class="info-container-div">
-                <div data-test="title-item-list" class="tittle-container">
-                    <span   class="item-title-render">${item.name}</span>
+                <div  class="tittle-container">
+                    <span data-test="title-item-list"   class="item-title-render">${item.name}</span>
                 </div>
 
-                <div data-test="description-item-list" class="description-container">
-                    <p   class="item-description-render">${item.description} </p>
+                <div  class="description-container">
+                    <p data-test="description-item-list"   class="item-description-render">${item.description} </p>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@ export class TuristicForm {
         if (window.screen.width > 1024) {
             this.removeslick();
         }
-        this.items.innerHTML = titleStructure;
+        this.items.innerHTML = cards;
 
         if (window.screen.width > 1024) {
             this.slickAdd();
