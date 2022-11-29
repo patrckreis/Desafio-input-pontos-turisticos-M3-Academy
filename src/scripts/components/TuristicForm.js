@@ -25,18 +25,6 @@ export class TuristicForm {
                 description:
                     "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
             },
-            {
-                name: "Centro Histórico de Paraty",
-                path: "assets/centro-paraty.png",
-                description:
-                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
-            },
-            {
-                name: "Centro Histórico de Paraty",
-                path: "assets/centro-paraty.png",
-                description:
-                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor dosa amet sint. Velit officia consece duis enim velit mollit.",
-            },
         ];
         this.uploadedImage = "";
         this.selectors();
@@ -69,7 +57,8 @@ export class TuristicForm {
     loadFile(event) {
         this.uploadedImage = URL.createObjectURL(event.target.files[0]);
         console.log(this.uploadedImage);
-        output.src = this.uploadedImage;
+        this.output.style.background = `no-repeat center url(${this.uploadedImage})`;
+        this.output.style.backgroundSize = `cover`;
         this.output.classList.remove("display-none");
     }
 
@@ -102,8 +91,7 @@ export class TuristicForm {
         this.list.forEach(function (item) {
             titleStructure += `
         <li data-test="container-item-list" class="card-li">
-            <div data-test="item-list" class="image-container">
-            <img data-test="image-item-list" class="image-container-render" src=${item.path} />
+            <div data-test="item-list" class="image-container" style="background: no-repeat center url(${item.path});background-size:cover">
             </div>
             <div class="info-container-div">
                 <div data-test="title-item-list" class="tittle-container">

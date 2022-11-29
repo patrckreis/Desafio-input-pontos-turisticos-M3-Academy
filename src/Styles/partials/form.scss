@@ -1,13 +1,18 @@
 .turistic-form-title-placeholder,
-.turistic-form-description-placeholder,
-.turistic-form-image-input {
-    font-family: "roboto";
+.turistic-form-description-placeholder {
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15px;
     color: #858585;
+
+    @media (min-width: 2500px) {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 37.5px;
+    }
 }
 
 .turistic-form-title-placeholder {
@@ -28,6 +33,11 @@
         width: 100%;
         height: 54px;
         margin-top: 15px;
+    }
+
+    @media (min-width: 2500px) {
+        width: 575px;
+        height: 64px;
     }
 }
 
@@ -53,6 +63,12 @@
         height: 131px;
         margin-top: 19px;
     }
+
+    @media (min-width: 2500px) {
+        margin-top: 16px;
+        width: 725px;
+        height: 320px;
+    }
 }
 
 .point-turistic-title {
@@ -69,7 +85,18 @@
         margin: 40px 0 32px;
     }
     @media (min-width: 280px) and (max-width: 490px) {
+        font-size: 28px;
         margin: 40px 0 32px;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (min-width: 2500px) {
+        font-size: 64px;
+        line-height: 120%;
+        width: max-content;
+        height: unset;
+        margin-bottom: 41px;
     }
 }
 
@@ -85,6 +112,10 @@
     @media (min-width: 280px) and (max-width: 1024px) {
         height: fit-content;
     }
+
+    @media (min-width: 2500px) {
+        height: 400px;
+    }
 }
 
 .turistic-form {
@@ -92,6 +123,10 @@
 
     @media (min-width: 280px) and (max-width: 1024px) {
         width: 100%;
+    }
+
+    @media (min-width: 2500px) {
+        width: 1350px;
     }
 }
 
@@ -111,6 +146,7 @@
     line-height: 120%;
 
     @media (min-width: 280px) and (max-width: 490px) {
+        font-size: 28px;
         width: 100%;
     }
 
@@ -151,6 +187,11 @@
         margin-top: 10px;
         width: 100%;
     }
+
+    @media (min-width: 2500px) {
+        font-size: 32px;
+        line-height: 150%;
+    }
 }
 
 .turistic-form-image {
@@ -171,13 +212,16 @@
         width: 100%;
         height: 212px;
     }
+
+    @media (min-width: 2500px) {
+        width: 600px;
+        height: 400px;
+    }
 }
 
 .input-image {
     z-index: 1;
     display: none;
-    /* z-index: 2;
-    position: absolute; */
 }
 
 .turistic-form-image-output {
@@ -185,13 +229,6 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-
-    /* max-height: 100%;
-    max-width: 100%;
-    border: 2px solid #e5e5e5;
-    border-radius: 8px;
-    width: 343px;
-    height: 212px; */
 }
 
 .span-input-image {
@@ -208,6 +245,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 2500px) {
+        line-height: 48px;
+        font-size: 32px;
+    }
 }
 
 .display-none {

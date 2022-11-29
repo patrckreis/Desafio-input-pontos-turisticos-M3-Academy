@@ -1,12 +1,7 @@
-/* .title-result {
-    margin: 0 130px;
-} */
-
 .cards-result-render {
     display: flex;
     max-width: 100%;
     list-style: none;
-    /* flex-wrap: wrap; */
     gap: 21px;
     margin: auto;
     @media (min-width: 491px) and (max-width: 1024px) {
@@ -19,22 +14,21 @@
 }
 
 .item-description-render {
+    word-break: break-word;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    @media (min-width: 491px) and (max-width: 1024px) {
-        width: auto;
-        margin-top: 68px;
-    }
 
-    @media (min-width: 280px) and (max-width: 490px) {
-        width: auto;
+    @media (min-width: 2500px) {
+        font-size: 32px;
+        line-height: 48px;
     }
 }
 
 .description-container {
+    margin-top: 8px;
     height: fit-content;
     width: 105%;
     overflow-y: auto;
@@ -56,9 +50,24 @@
         border-radius: 80px;
         border: 3px solid #ffffff;
     }
+
+    @media (min-width: 491px) and (max-width: 1024px) {
+        height: 24px;
+        width: 100%;
+    }
+
+    @media (min-width: 280px) and (max-width: 490px) {
+        width: 100%;
+        height: 72px;
+    }
+
+    @media (min-width: 2500px) {
+        height: 192px;
+    }
 }
 
 .item-title-render {
+    word-break: break-word;
     width: 231px;
     height: 60px;
     font-family: "Poppins";
@@ -73,6 +82,11 @@
 
     @media (min-width: 280px) and (max-width: 490px) {
         display: block;
+    }
+
+    @media (min-width: 2500px) {
+        font-size: 48px;
+        line-height: 56px;
     }
 }
 .card-li {
@@ -93,11 +107,20 @@
         height: 100%;
         margin-top: 24px;
     }
+
+    @media (min-width: 2500px) {
+        width: 544px;
+        height: 768px;
+    }
 }
 
 .info-container-div {
     width: 100%;
     padding: 24px;
+
+    @media (min-width: 2500px) {
+        height: 50%;
+    }
 }
 
 .card-image {
@@ -112,26 +135,64 @@
     border-radius: 8px;
     height: 50%;
     width: 100%;
+
+    @media (min-width: 491px) and (max-width: 1024px) {
+        height: 570px;
+        width: 100%;
+    }
+
+    @media (min-width: 280px) and (max-width: 490px) {
+        height: 212px;
+        width: 100%;
+    }
 }
 
 .image-container-render {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
+
+    @media (min-width: 491px) and (max-width: 1024px) {
+        height: 570px;
+        width: 100%;
+    }
+
+    @media (min-width: 280px) and (max-width: 490px) {
+        height: 212px;
+        width: 100%;
+    }
 }
 
 .tittle-container {
     min-height: 60px;
     width: 100%;
+
+    @media (min-width: 2500px) {
+        height: 120px;
+    }
 }
 
 .slick-prev {
     background: url("assets/arrowleft.png") no-repeat center center;
     color: #858585;
+
+    @media (min-width: 2500px) {
+        background: url("assets/arrowleft2.png") no-repeat center center;
+        height: 58px;
+        width: 26px;
+        left: -66px;
+    }
 }
 
 .slick-next {
     background: url("assets/arrowright.png") no-repeat center center;
     color: #858585;
+
+    @media (min-width: 2500px) {
+        background: url("assets/arrowright2.png") no-repeat center center;
+        height: 58px;
+        width: 26px;
+        right: -66px;
+    }
 }
 
 .slick-slide {
